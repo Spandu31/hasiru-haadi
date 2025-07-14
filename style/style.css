@@ -206,3 +206,73 @@ form button:hover {
   background-color: #2e4e3f;
 }
 
+/* Make content flow nicely on small screens */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Responsive nav */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  margin-top: 1em;
+}
+
+/* Image gallery grid */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1em;
+  padding: 1em;
+}
+
+.gallery-grid img,
+.gallery-grid iframe {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Form responsiveness */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  max-width: 500px;
+  margin: auto;
+  padding: 1em;
+}
+
+input, textarea {
+  padding: 0.8em;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1em;
+}
+
+button {
+  background-color: #356859;
+  color: white;
+  border: none;
+  padding: 0.8em;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2e4e3f;
+}
+
+/* Email link */
+.email-link {
+  display: block;
+  text-align: center;
+  margin: 1em auto;
+  width: max-content;
+}
