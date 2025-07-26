@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buy Now | Hasiru Haadi</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <header>
+    <h1>🌿 Hasiru Haadi | ಹಸಿರು ಹಾದಿ</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+    </nav>
+  </header>
+
+  <main class="contact-form">
+    <h2>🛍️ Place Your Order</h2>
+
+    <form action="https://formsubmit.co/hasiruhaadi@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://spandu31.github.io/hasiru-haadi/thankyoufororder.html">
+
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" required>
+
+      <label for="address">Delivery Address:</label>
+      <textarea id="address" name="address" rows="4" required></textarea>
+
+      <label for="product">Product:</label>
+      <select id="product" name="product" required>
+        <option value="">-- Select Product --</option>
+        <option value="Snake Plant">Snake Plant – ₹149</option>
+        <option value="Little Gem">Little Gem – ₹99</option>
+        <option value="Moss Rose">Moss Rose – ₹59</option>
+      </select>
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+
+      <div id="total" style="margin-top: 10px; font-weight: bold;">Total: ₹0</div>
+
+      <button type="submit" class="button">Place Order</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>© 2025 Hasiru Haadi | ಹಸಿರು ಹಾದಿ — All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const productSelect = document.getElementById('product');
+    const quantityInput = document.getElementById('quantity');
+    const totalDiv = document.getElementById('total');
+
+    const prices = {
+      "Snake Plant": 149,
+      "Little Gem": 99,
+      "Moss Rose": 59
+    };
+
+    function updateTotal() {
+      const selectedProduct = productSelect.value;
+      const quantity = parseInt(quantityInput.value) || 0;
+      const price = prices[selectedProduct] || 0;
+      totalDiv.textContent = `Total: ₹${price * quantity}`;
+    }
+
+    productSelect.addEventListener('change', updateTotal);
+    quantityInput.addEventListener('input', updateTotal);
+    updateTotal();
+  </script>
+</body>
+</html>
